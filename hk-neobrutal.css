@@ -1,0 +1,225 @@
+/* ============================================================
+   HackKnow Neo-Brutalism Overlay  •  v1.0  •  May 2026
+   Drop-in CSS — works on any Bootstrap 4/5 template.
+   Brand:  black #1A1A1A · yellow #FFE629 · magenta #FF4D9D ·
+           green #34D399 · cream #FFFBEA
+   ============================================================ */
+
+:root {
+  --hk-black: #1A1A1A;
+  --hk-yellow: #FFE629;
+  --hk-magenta: #FF4D9D;
+  --hk-green: #34D399;
+  --hk-cream: #FFFBEA;
+  --hk-border: 3px solid var(--hk-black);
+  --hk-shadow: 6px 6px 0 0 var(--hk-black);
+  --hk-shadow-sm: 3px 3px 0 0 var(--hk-black);
+  --hk-radius: 12px;
+  --hk-font-display: "Space Grotesk", "Archivo Black", "Inter", system-ui, -apple-system, sans-serif;
+  --hk-font-body: "Inter", "Space Grotesk", system-ui, -apple-system, sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=Archivo+Black&display=swap');
+
+html, body {
+  background: var(--hk-cream) !important;
+  color: var(--hk-black) !important;
+  font-family: var(--hk-font-body) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle dotted backdrop pattern */
+body::before {
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image: radial-gradient(rgba(26,26,26,.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+body > * { position: relative; z-index: 1; }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6,
+.masthead-heading, .page-section-heading, .heading {
+  font-family: var(--hk-font-display) !important;
+  font-weight: 800 !important;
+  color: var(--hk-black) !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none !important;
+}
+h1, .h1, .display-1, .display-2, .display-3 { font-size: clamp(2rem, 6vw, 4rem) !important; }
+.text-muted { color: #444 !important; }
+
+/* Sections — alternating yellow / cream / white panels */
+section, .page-section, .masthead, header.masthead {
+  background: var(--hk-cream) !important;
+  color: var(--hk-black) !important;
+  padding: 4rem 0 !important;
+}
+section:nth-of-type(even) { background: var(--hk-yellow) !important; }
+section:nth-of-type(3n) { background: #fff !important; }
+.bg-primary, .bg-dark, .bg-secondary, .bg-light,
+.bg-info, .bg-success, .bg-warning, .bg-danger {
+  background: var(--hk-yellow) !important; color: var(--hk-black) !important;
+}
+
+/* Buttons — neo-brutal chip with hard shadow */
+.btn, button.btn, .btn-primary, .btn-secondary, .btn-success,
+.btn-info, .btn-warning, .btn-danger, .btn-dark, .btn-light,
+.btn-xl, .btn-outline-primary, .btn-outline-secondary, .btn-outline-light, .btn-outline-dark {
+  background: var(--hk-yellow) !important;
+  color: var(--hk-black) !important;
+  border: var(--hk-border) !important;
+  border-radius: var(--hk-radius) !important;
+  box-shadow: var(--hk-shadow-sm) !important;
+  font-family: var(--hk-font-display) !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  padding: 0.75rem 1.5rem !important;
+  transition: transform .15s ease, box-shadow .15s ease !important;
+}
+.btn:hover, button.btn:hover {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 1px 1px 0 0 var(--hk-black) !important;
+  background: var(--hk-yellow) !important;
+}
+.btn-success, .btn-outline-success { background: var(--hk-green) !important; }
+.btn-danger, .btn-outline-danger  { background: var(--hk-magenta) !important; color: #fff !important; }
+
+/* Cards / panels — hard border + offset shadow */
+.card, .portfolio-item, .post-preview, .testimonial, .feature, .feature-item,
+.shop-item, .blog-post, .item, .product, .pricing-table {
+  background: #fff !important;
+  border: var(--hk-border) !important;
+  border-radius: var(--hk-radius) !important;
+  box-shadow: var(--hk-shadow) !important;
+  overflow: hidden !important;
+}
+.card-img, .card-img-top, .portfolio-img, .post-thumb, .product-img {
+  border-bottom: var(--hk-border) !important;
+  border-radius: 0 !important;
+}
+
+/* Navbar */
+.navbar, .navbar-dark, .navbar-light, .header, .topbar, #mainNav {
+  background: var(--hk-black) !important;
+  color: #fff !important;
+  border-bottom: var(--hk-border) !important;
+  padding: 0.75rem 1rem !important;
+}
+.navbar a, .navbar .nav-link, .navbar-brand,
+.navbar-light .navbar-brand, .navbar-dark .navbar-brand,
+.navbar-light .nav-link, .navbar-dark .nav-link {
+  color: #fff !important;
+  font-family: var(--hk-font-display) !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+.navbar a:hover, .navbar .nav-link:hover { color: var(--hk-yellow) !important; }
+.navbar-brand { font-size: 1.4rem !important; }
+
+/* Hero / masthead */
+.masthead, header.masthead, .hero, .jumbotron {
+  background: var(--hk-yellow) !important;
+  color: var(--hk-black) !important;
+  border-bottom: var(--hk-border) !important;
+  padding: 5rem 1rem !important;
+  text-align: center;
+}
+.masthead-heading, .masthead h1 { font-size: clamp(2.5rem, 7vw, 5rem) !important; }
+.masthead-subheading, .masthead .lead { font-weight: 500 !important; color: var(--hk-black) !important; }
+
+/* Forms */
+input, select, textarea, .form-control {
+  background: #fff !important;
+  color: var(--hk-black) !important;
+  border: var(--hk-border) !important;
+  border-radius: var(--hk-radius) !important;
+  box-shadow: var(--hk-shadow-sm) !important;
+  padding: 0.75rem 1rem !important;
+  font-family: var(--hk-font-body) !important;
+}
+input:focus, select:focus, textarea:focus, .form-control:focus {
+  outline: none !important;
+  box-shadow: var(--hk-shadow) !important;
+  border-color: var(--hk-black) !important;
+}
+
+/* Footer */
+footer, .footer {
+  background: var(--hk-black) !important;
+  color: var(--hk-cream) !important;
+  border-top: var(--hk-border) !important;
+  padding: 3rem 1rem !important;
+}
+footer a, .footer a { color: var(--hk-yellow) !important; }
+
+/* Tables */
+.table, table {
+  border: var(--hk-border) !important;
+  border-radius: var(--hk-radius) !important;
+  background: #fff !important;
+  box-shadow: var(--hk-shadow) !important;
+  overflow: hidden !important;
+}
+.table th, table th {
+  background: var(--hk-yellow) !important;
+  color: var(--hk-black) !important;
+  border-bottom: 2px solid var(--hk-black) !important;
+  font-family: var(--hk-font-display) !important;
+}
+
+/* Badges & pills */
+.badge, .label, .tag, .pill {
+  background: var(--hk-magenta) !important;
+  color: #fff !important;
+  border: 2px solid var(--hk-black) !important;
+  border-radius: 8px !important;
+  padding: 0.25em 0.6em !important;
+  font-family: var(--hk-font-display) !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+}
+
+/* Images */
+img.img-fluid, .portfolio-img, img.rounded-circle {
+  border: var(--hk-border) !important;
+  border-radius: var(--hk-radius) !important;
+  box-shadow: var(--hk-shadow-sm) !important;
+}
+img.rounded-circle { border-radius: 50% !important; }
+
+/* Sidebar / dashboard tweaks (sb-admin templates) */
+#wrapper #sidebar-wrapper, .sidebar, #sidebar,
+#wrapper #content-wrapper { background: var(--hk-cream) !important; color: var(--hk-black) !important; }
+.sidebar .nav-item .nav-link, #sidebar a {
+  color: var(--hk-black) !important; font-family: var(--hk-font-display) !important; font-weight: 600 !important;
+}
+.sidebar { border-right: var(--hk-border) !important; }
+.bg-gradient-primary, .bg-gradient-info, .bg-gradient-dark { background: var(--hk-black) !important; color: #fff !important; }
+.topbar { background: #fff !important; border-bottom: var(--hk-border) !important; }
+
+/* HackKnow watermark badge — top-right, subtle but always present */
+.hk-watermark {
+  position: fixed; top: 12px; right: 12px; z-index: 9999;
+  background: var(--hk-yellow); color: var(--hk-black);
+  border: 2.5px solid var(--hk-black); border-radius: 10px;
+  box-shadow: 4px 4px 0 0 var(--hk-black);
+  font-family: var(--hk-font-display); font-weight: 800; font-size: 12px;
+  padding: 6px 12px; text-decoration: none; letter-spacing: -0.01em;
+}
+.hk-watermark:hover { transform: translate(2px,2px); box-shadow: 2px 2px 0 0 var(--hk-black); color: var(--hk-black); text-decoration:none; }
+
+/* Make sure utility text colours don't fight us */
+.text-white, .text-light { color: #fff !important; }
+.text-primary, .text-secondary, .text-info, .text-success, .text-warning, .text-danger { color: var(--hk-black) !important; }
+
+/* Mobile polish */
+@media (max-width: 600px) {
+  .masthead, header.masthead { padding: 3rem 1rem !important; }
+  section, .page-section { padding: 2.5rem 0 !important; }
+  .btn { padding: 0.7rem 1.25rem !important; font-size: 15px !important; }
+  .hk-watermark { font-size: 11px; padding: 5px 9px; }
+}
